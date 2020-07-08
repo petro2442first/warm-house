@@ -1,7 +1,0 @@
-$max-width: 1265;
-@mixin adapt-font($pc-size, $mob-size) {
-    $add-size: $pc-size - $mob-size;
-    $max-width: $max-width - 320;
-    font-size: calc(#{$mob-size + px} + #{$add-size} * ((100vw - 320px) / #{$max-width}));
-    line-height: calc(8px + #{$mob-size + px} + #{$add-size} * ((100vw - 320px) / #{$max-width}));
-}
