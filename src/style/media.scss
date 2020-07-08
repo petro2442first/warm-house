@@ -1,0 +1,145 @@
+@media (max-width: 1024px) {
+    .order {
+        &__container {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+    .order-card {
+        &:nth-child(3n + 1)::after {
+            content: none;
+        }
+        &:nth-child(4n + 1)::after {
+            content: '>';
+        }
+    }
+}
+
+@media(max-width: 768px) {
+    .nav-bar {
+        &__menu {
+            position: fixed;
+            flex-direction: column;
+            transform: translateX(-100vw);
+        }
+        #hamburger {
+            display: block;
+        }
+    }
+    .about-us {
+        &__container {
+            flex-direction: column;
+        }
+        &__column {
+            width: 100%;
+        }
+    }
+    .order {
+        &__container {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+    .order-card {
+        &::after {
+            content: none;
+        }
+        &:nth-child(2n + 1)::after {
+            content: none;
+        }
+        &:nth-child(3n + 1)::after {
+            content: '>';
+        }
+        &:nth-child(4n + 1)::after {
+            content: none;
+        }
+        &:nth-child(6n + 1)::after {
+            content: none;
+        }
+    }
+    .gallery {
+        &__container {
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 5px;
+        }
+    }
+}
+
+@media(max-width: 600px) {
+    .back-call {
+        &__container {
+            max-width: 300px;
+        }
+    }
+    .container {
+        margin: 0 0;
+    }
+    .block-title {
+        margin-top: 0;
+    }
+    .block {
+        &::before {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 22px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90%;
+            height: 4px;
+            border-radius: 3px;
+            background: #000;
+        }
+    }
+    .about-us {
+        &__content {
+            padding: 10px;
+        }
+    }
+    .container {
+        padding: 0 10px;
+    }
+    .order {
+        &__container {
+            grid-template-columns: repeat(1, 1fr);
+        }
+    }
+    .order-card {
+        &+div::after {
+            content: '>' !important;
+            transform: translate(-50%, -50%) scaleY(0.8) rotate(90deg);
+            top: -25px;
+            left: 50%;
+        }
+    }
+    .contact-form {
+        width: calc(100% - 20px);
+        min-width: auto;
+    }
+    .gallery {
+        &__container {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+    #go-top {
+        right: 10px;
+        width: 50px;
+        height: 50px;
+        &.show {
+            bottom: 10px;
+        }
+    }
+    .call {
+        left: 10px;
+        bottom: 10px;
+        width: 50px;
+        height: 50px;
+    }
+    #hamburger {
+        right: -10px !important;
+        top: 10px !important;
+        width: 50px !important;
+        height: 50px !important;
+    }
+    .footer {
+        padding-bottom: 85px;
+    }
+}

@@ -1,0 +1,54 @@
+.why-we {
+    &__column {
+        width: 100%;
+        padding: 25px;
+    }
+    &__row {
+        position: relative;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        &:nth-child(2n + 2) {
+            flex-direction: row-reverse;
+            .why-we__content {
+                align-items: flex-end;
+            }
+        }
+        &+div {
+            margin-top: 50px;
+            &::before {
+                content: '';
+                position: absolute;
+                display: block;
+                width: 80%;
+                height: 2px;
+                background: #000000;
+                border-radius: 2px;
+                top: -24px;
+                left: 10%;
+            }
+        }
+    }
+    &__icon {
+        width: 100px;
+        height: 100px;
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+    }
+    &__content {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    &__title {
+        @include adapt-font(20, 16);
+        margin: 0 10px 10px 10px;
+        font-weight: bold;
+    }
+    &__description {
+        margin: 20px;
+    }
+}
