@@ -176,17 +176,31 @@ function backCall() {
 }
 
 function calculator() {
-    const calcBtn = document.querySelector('#checkout');
-    const calcWindow = document.querySelector('#calculator');
-    calcBtn.addEventListener('click', () => {
-        calcWindow.classList.add('show');
-        document.documentElement.style.overflowY = 'hidden';
-    });
-    const closeCalcWindow = document.querySelector('#close-calculator');
-    closeCalcWindow.addEventListener('click', () => {
-        calcWindow.classList.remove('show');
-        document.documentElement.style.overflowY = 'auto';
-    });
+    const openCalculator = document.querySelector('#checkout') || null;
+    // const calcWindow = document.querySelector('#calculator');
+    // calcBtn.addEventListener('click', () => {
+    //     calcWindow.classList.add('show');
+    //     document.documentElement.style.overflowY = 'hidden';
+    // });
+    // const closeCalcWindow = document.querySelector('#close-calculator');
+    // closeCalcWindow.addEventListener('click', () => {
+    //     calcWindow.classList.remove('show');
+    //     document.documentElement.style.overflowY = 'auto';
+    // });
+    const calcBtn = document.querySelector('#calculate');
+    calcBtn.addEventListener('click', calculate);
+    const answerVolume = document.querySelector('#answer-volume');
+    const answerPrice = document.querySelector('#answer-price');
+
+    function calculate() {
+        const price = 750;
+        const coef = 1.3;
+        const height = document.querySelector('#height').value;
+        const length = document.querySelector('#length').value;
+        const depth = document.querySelector('#depth').value;
+        answerVolume.value = (height * length * depth * coef).toFixed(2);
+        answerPrice.value = (answerVolume.value * price).toFixed(2);
+    }
 }
 
 document.addEventListener('DOMContentLoaded', () => {

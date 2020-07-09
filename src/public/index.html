@@ -12,14 +12,51 @@
 <body>
     <header class="header" id="header">
         <div class="header__container">
-            <div class="header__card">
-                <div class="header__logo">
-                    <img src="images/logo.svg" alt="Утепление домов">
+            <div class="header__card card">
+                <div class="card__front">
+                    <div class="header__logo">
+                        <img src="images/logo.svg" alt="Утепление домов">
+                    </div>
+                    <div class="header__title">Утепление домов</div>
+                    <div class="header__description">Твоё тепло - наша работа</div>
                 </div>
-                <div class="header__title">Утепление домов</div>
-                <div class="header__description">Твоё тепло - наша работа</div>
+                <div class="card__back">
+                    <div class="desktop-calculator" id="calculator">
+                        <div class="desktop-calculator__container">
+                            <div class="desktop-calculator__close" id="close-calculator">
+                                Закрыть
+                            </div>
+                            <div class="desktop-calculator__title">Калькулятор стоимости</div>
+                            <div class="desktop-calculator__form">
+                                <div class="desktop-calculator__group">
+                                    <label for="S">Высота</label>
+                                    <input type="number" name="height" id="height" placeholder="м">
+                                </div>
+                                <div class="desktop-calculator__group">
+                                    <label for="S">Длина</label>
+                                    <input type="number" name="length" id="length" placeholder="м">
+                                </div>
+                                <div class="desktop-calculator__group">
+                                    <label for="S">Глубина</label>
+                                    <input type="number" name="depth" id="depth" placeholder="м">
+                                </div>
+                                <button class="desktop-calculator__calculate" id="calculate">
+                                    Рассчитать
+                                </button>
+                                <div class="desktop-calculator__group desktop-calculator__group--reverse">
+                                    <label for="answer">м<sup>3</sup></label>
+                                    <input type="number" name="answer-volume" id="answer-volume" readonly placeholder="Рассчетный обьем">
+                                </div>
+                                <div class="desktop-calculator__group desktop-calculator__group--reverse">
+                                    <label for="answer">грн</label>
+                                    <input type="number" name="answer-price" id="answer-price" readonly placeholder="Рассчетная стоимость">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="header__order" id="checkout">Рассчитать примерную стоимость</div>
+            <div id="checkout" class="desktop">Рассчитать примерную стоимость</div>
         </div>
     </header>
     <main class="container">
@@ -303,27 +340,7 @@
             </form>
         </div>
     </div>
-    <div class="calculator" id="calculator">
-        <div class="calculator__container">
-            <div class="calculator__close" id="close-calculator">
-                Закрыть
-            </div>
-            <div class="calculator__title">Калькулятор стоимости</div>
-            <div class="calculator__form">
-                <div class="calculator__group">
-                    <label for="S">М<sup>2</sup></label>
-                    <input type="text" name="S" id="S" placeholder="Площадь">
-                </div>
-                <button class="calculator__calculate">
-                    Рассчитать
-                </button>
-                <div class="calculator__group">
-                    <label for="answer">грн</label>
-                    <input type="text" name="answer" id="answer" readonly placeholder="Рассчетная стоимость">
-                </div>
-            </div>
-        </div>
-    </div>
+
 </body>
 
 </html>
