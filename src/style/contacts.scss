@@ -108,7 +108,7 @@
             text-align: center;
             border: none;
             font-weight: bold;
-            font-size: 20px;
+            @include adapt-font(20, 16);
             cursor: pointer;
             transition: 0.3s;
             &:hover {

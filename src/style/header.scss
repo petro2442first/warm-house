@@ -70,8 +70,8 @@
     }
     &__back {
         @extend %card-side;
-        transform: rotateX(0deg);
-        z-index: 3;
+        transform: rotateX(180deg);
+        z-index: 1;
     }
     %card-side {
         position: absolute;
@@ -125,7 +125,8 @@
         margin-bottom: 25px;
     }
     &__form {
-        padding: 15px;
+        max-width: 300px;
+        // padding: 15px;
         display: flex;
         flex-direction: column;
         align-items: flex-start;
@@ -167,6 +168,42 @@
         transition: 0.3s;
         &:hover {
             filter: brightness(.6);
+        }
+    }
+    .response {
+        width: 100%;
+        min-height: 150px;
+        opacity: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        transition: 0.3s;
+        &.show {
+            opacity: 1;
+        }
+        .error-msg {
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+        }
+        .call-btn {
+            margin: 5px;
+            width: 80%;
+            padding: 10px;
+            border: 0;
+            border-radius: 5px;
+            background: $primary-color;
+            cursor: pointer;
+            text-align: center;
+            transition: 0.3s;
+            &:hover {
+                filter: brightness(.6);
+            }
         }
     }
 }

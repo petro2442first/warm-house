@@ -189,17 +189,44 @@ function calculator() {
     // });
     const calcBtn = document.querySelector('#calculate');
     calcBtn.addEventListener('click', calculate);
-    const answerVolume = document.querySelector('#answer-volume');
-    const answerPrice = document.querySelector('#answer-price');
 
     function calculate() {
         const price = 750;
         const coef = 1.3;
-        const height = document.querySelector('#height').value;
-        const length = document.querySelector('#length').value;
-        const depth = document.querySelector('#depth').value;
-        answerVolume.value = (height * length * depth * coef).toFixed(2);
-        answerPrice.value = (answerVolume.value * price).toFixed(2);
+        const height = document.querySelector('#height').value || '';
+        const length = document.querySelector('#length').value || '';
+        const depth = document.querySelector('#depth').value || '';
+
+        const container = document.querySelector('.response');
+        if (height === '' || length === '' || depth === '') {
+            const responseHTML = `
+            <div class="error-msg">Заполните все поля!</div>
+            `;
+            container.innerHTML = responseHTML;
+            container.classList.add('show');
+        } else {
+            const answerVolume = (height * length * depth * coef).toFixed(2);
+            const answerPrice = (answerVolume * price).toFixed(2);
+            const responseHTML = `
+            <div class="desktop-calculator__group desktop-calculator__group--reverse">
+                <label for="answer">м<sup>3</sup></label>
+                <input type="number" name="answer-volume" id="answer-volume" readonly value="${answerVolume}">
+            </div>
+            <div class="desktop-calculator__group desktop-calculator__group--reverse">
+                <label for="answer">грн</label>
+                <input type="number" name="answer-price" id="answer-price" readonly value="${answerPrice}">
+            </div>
+            <button class="call-btn">Запросить обратный звонок для получения скидки</button>
+            `;
+            container.innerHTML = responseHTML;
+            document.querySelector('.call-btn').addEventListener('click', () => {
+                const callWindow = document.querySelector('#back-call');
+                callWindow.classList.add('show');
+                document.documentElement.style.overflowY = 'hidden';
+            });
+            container.classList.add('show');
+        }
+
     }
 }
 

@@ -29,27 +29,22 @@
                             <div class="desktop-calculator__title">Калькулятор стоимости</div>
                             <div class="desktop-calculator__form">
                                 <div class="desktop-calculator__group">
-                                    <label for="S">Высота</label>
+                                    <label for="S">Высота(м)</label>
                                     <input type="number" name="height" id="height" placeholder="м">
                                 </div>
                                 <div class="desktop-calculator__group">
-                                    <label for="S">Длина</label>
+                                    <label for="S">Длина(м)</label>
                                     <input type="number" name="length" id="length" placeholder="м">
                                 </div>
                                 <div class="desktop-calculator__group">
-                                    <label for="S">Глубина</label>
+                                    <label for="S">Глубина(м)</label>
                                     <input type="number" name="depth" id="depth" placeholder="м">
                                 </div>
                                 <button class="desktop-calculator__calculate" id="calculate">
                                     Рассчитать
                                 </button>
-                                <div class="desktop-calculator__group desktop-calculator__group--reverse">
-                                    <label for="answer">м<sup>3</sup></label>
-                                    <input type="number" name="answer-volume" id="answer-volume" readonly placeholder="Рассчетный обьем">
-                                </div>
-                                <div class="desktop-calculator__group desktop-calculator__group--reverse">
-                                    <label for="answer">грн</label>
-                                    <input type="number" name="answer-price" id="answer-price" readonly placeholder="Рассчетная стоимость">
+                                <div class="response">
+
                                 </div>
                             </div>
                         </div>
@@ -235,20 +230,12 @@
             <div class="contacts__container">
                 <form class="contact-form" id="contact-form" action="">
                     <div class="contact-form__group">
-                        <label for="name">Ф.И.О.<span title="Обязательное поле">*</span></label>
-                        <input type="text" name="name" id="name" required>
+                        <label for="name">Ф.И.О.</label>
+                        <input type="text" name="name" id="name">
                     </div>
                     <div class="contact-form__group">
                         <label for="phone">Номер телефона<span title="Обязательное поле">*</span></label>
                         <input type="tel" name="phone" id="phone" required>
-                    </div>
-                    <div class="contact-form__group">
-                        <label for="email">E-mail</label>
-                        <input type="email" name="email" id="email">
-                    </div>
-                    <div class="contact-form__textarea">
-                        <label for="message">Ваше сообщение</label>
-                        <textarea name="message" id="message"></textarea>
                     </div>
                     <div class="contact-form__submit">
                         <input type="submit" value="Отправить">
