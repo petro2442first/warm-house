@@ -205,8 +205,8 @@ function calculator() {
             container.innerHTML = responseHTML;
             container.classList.add('show');
         } else {
-            const answerVolume = (height * length * depth * coef).toFixed(2);
-            const answerPrice = (answerVolume * price).toFixed(2);
+            const answerVolume = (height * length * depth).toFixed(2);
+            const answerPrice = (answerVolume * price * coef).toFixed(2);
             const responseHTML = `
             <div class="desktop-calculator__group desktop-calculator__group--reverse">
                 <label for="answer">м<sup>3</sup></label>

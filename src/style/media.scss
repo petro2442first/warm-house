@@ -1,20 +1,19 @@
 @media (max-width: 1024px) {
-    .order {
+    .gallery {
         &__container {
-            grid-template-columns: repeat(3, 1fr);
-        }
-    }
-    .order-card {
-        &:nth-child(3n + 1)::after {
-            content: none;
-        }
-        &:nth-child(4n + 1)::after {
-            content: '>';
+            grid-gap: 10px;
         }
     }
 }
 
 @media(max-width: 768px) {
+    .card {
+        &__front {
+            &::after {
+                display: block;
+            }
+        }
+    }
     .nav-bar {
         &__menu {
             position: fixed;
