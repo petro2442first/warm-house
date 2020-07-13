@@ -201,6 +201,32 @@ function backCall() {
         callWindow.classList.remove('show');
         document.documentElement.style.overflowY = 'auto';
     });
+    const form = document.querySelector('.back-call__form') || null;
+    if(form === null) return;
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const subject = form.querySelector('input[name="subject"]').value;
+        const phone = form.querySelector('input[name="phone"]').value;
+        const name = '';
+        fetch('../php/send.php', {
+            method: 'POST',
+            body: JSON.stringify([subject, name, phone]),
+        })
+        .then(response => response.text())
+        .then(data => {
+            const answer = document.querySelector('.back-call__response');
+            answer.innerHTML = data;
+            setTimeout(() => {
+                answer.classList.remove('show');
+                answer.classList.remove('ok');
+            }, 2500);
+            answer.classList.add('show');
+            answer.classList.add('ok');
+        })
+        .then(error => {
+            console.log(error);
+        })
+    });
 }
 
 function calculator() {

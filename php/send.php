@@ -40,16 +40,46 @@ try {
 
     // Content
     $mail->isHTML(true);                                  // Set email format to HTML
-    $mail->Subject = "=?UTF-8?B?".base64_encode('Заявка с сайта teplotech.com')."?=";
+    $mail->Subject = "=?UTF-8?B?" . base64_encode('Заявка с сайта teplotech.com') . "?=";
 
-    $mail->Body = "
-    <p>{$subject}</p>
-    <p>Номер телефона: {$phone}</p>
-    ";
+   $mail->Body = "
+    	<div style='
+				background-color: #FFF9DE;
+				padding: 25px;
+				border-radius: 5px;
+				box-shadow: 0 1px 1px rgba(0,0,0,0.45);
+    	'>
+	    	<p style='color: #000;
+				font-size: 18px;
+				font-family: sans-serif;'>{$subject}</p>
+	    	<p style='color: #000;
+				font-size: 18px;
+				font-family: sans-serif;'>Номер телефона: {$phone}</p>
+    	</div>
+    	";
+    	 $mail->AltBody = "{$subject}\nНомер телефона: {$phone}";
     if($name !== '') {
-    	$mail->Body .= "<p>Имя: {$name}</p>";
+    	$mail->Body = "
+    	<div style='
+				background-color: #FFF9DE;
+				padding: 25px;
+				border-radius: 5px;
+				box-shadow: 0 1px 1px #000;
+    	'>
+	    	<p style='color: #000;
+				font-size: 18px;
+				font-family: sans-serif;'>{$subject}</p>
+	    	<p style='color: #000;
+				font-size: 18px;
+				font-family: sans-serif;'>Номер телефона: {$phone}</p>
+	    	<p style='color: #000;
+				font-size: 18px;
+				font-family: sans-serif;'>Имя: {$name}</p>
+    	</div>
+    	";
+    	$mail->AltBody .= "\nИмя: {$name}";
     }
-    $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
+   
 
     $mail->send();
     echo 'Ваша заявка отправлена!';

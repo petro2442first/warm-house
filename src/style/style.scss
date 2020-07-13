@@ -10,7 +10,6 @@
     font-weight: 400;
     -webkit-font-smoothing: antialiased;
 }
-
 html,
 body {
     width: 100%;
@@ -126,6 +125,7 @@ ul {
         @include adapt-font(25, 16);
     }
     &__form {
+        position: relative;
         height: calc(100% - 50px);
         width: 100%;
         display: flex;
@@ -150,6 +150,37 @@ ul {
                 background: $primary-color;
                 cursor: pointer;
             }
+        }
+    }
+    &__response {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        transition: .3s;
+        border-radius: 0 0 5px 5px;
+        display: -webkit-flex;
+        display: -moz-flex;
+        display: -ms-flex;
+        display: -o-flex;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        height: 0;
+        overflow: hidden;
+        @include adapt-font(16, 14);
+        &.show {
+            opacity: 1;
+            height: 44px;
+        }
+        &.ok {
+            background: #78FF76;
+            color: #000;
+        }
+        &.error {
+            background: #EB5337;
+            color: #fff;
         }
     }
 }
