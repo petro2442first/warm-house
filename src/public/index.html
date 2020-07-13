@@ -169,7 +169,7 @@
                         <img src="images/order/payment.svg" alt="Полная оплата">
                     </div>
                     <div class="order-card__text">
-                        После выполнения всех работ и сдачи проекта оплачиваете полную стоимость проекта
+                        После выполнения всех работ и сдачи проекта, оплачиваете всю стоимость работ
                     </div>
                 </div>
                 <div class="order__card order-card">
@@ -199,7 +199,8 @@
         <div class="block contacts" id="contacts">
             <div class="block-title">Как с нами связаться?</div>
             <div class="contacts__container">
-                <form class="contact-form" id="contact-form" action="">
+                <form class="contact-form" id="contact-form" action="send.php" method="POST">
+                    <input type="text" hidden name="subject" value="Заявка из формы 'Связаться с нами'">
                     <div class="contact-form__group">
                         <label for="name">Ф.И.О.</label>
                         <input type="text" name="name" id="name">
@@ -211,6 +212,7 @@
                     <div class="contact-form__submit">
                         <input type="submit" value="Отправить">
                     </div>
+                    <div class="contact-form__response"></div>
                 </form>
             </div>
         </div>

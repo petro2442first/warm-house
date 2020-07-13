@@ -117,4 +117,31 @@
             }
         }
     }
+    &__response {
+        width: 100%;
+        padding: 10px;
+        opacity: 0;
+        transition: .3s;
+        border-radius: 5px;
+        margin-top: 5px;
+        display: -webkit-flex;
+        display: -moz-flex;
+        display: -ms-flex;
+        display: -o-flex;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        &.show {
+            opacity: 1;
+        }
+        &.ok {
+            background: #78FF76;
+            color: #000;
+        }
+        &.error {
+            background: #EB5337;
+            color: #fff;
+        }
+    }
 }

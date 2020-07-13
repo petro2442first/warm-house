@@ -6,6 +6,7 @@ import '../style/style.scss'
 import Swiper from 'swiper'
 import { Menu, MenuItem, MobileMenu } from './Menu'
 
+
 function smoothAppearance() {
     const header = document.querySelector('#header');
 
@@ -159,6 +160,28 @@ function contactForm() {
         if (this.value === '') label.classList.remove('focus');
 
     }
+
+    const form = document.querySelector('.contact-form') || null;
+    if(form === null) return;
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const name = form.querySelector('input[name="name"]').value;
+        const phone = form.querySelector('input[name="phone"]').value;
+        fetch('../php/send.php', {
+            method: 'POST',
+            body: JSON.stringify([name, phone]),
+        })
+        .then(response => response.text())
+        .then(data => {
+            const answer = document.querySelector('.contact-form__response');
+            answer.innerHTML = data;
+            answer.classList.add('show');
+            answer.classList.add('ok');
+        })
+        .then(error => {
+            console.log(error);
+        })
+    });
 }
 
 function backCall() {
@@ -229,6 +252,7 @@ function calculator() {
 
     }
 }
+
 
 document.addEventListener('DOMContentLoaded', () => {
 

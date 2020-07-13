@@ -42,6 +42,10 @@ module.exports = {
                     name: '[name].[ext]',
                 }
             },
+            {
+                test: /\.php$/,
+                loader: 'php-loader'
+            },
         ]
     },
     plugins: [
@@ -64,6 +68,6 @@ module.exports = {
         compress: true,
         port: 7700,
         historyApiFallback: true,
-        host: '192.168.1.106'
+        host: 'warm-house.web'
     }
 }
